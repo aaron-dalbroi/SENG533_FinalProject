@@ -48,3 +48,29 @@ Run `terraform init`
 After you change anything in the main.tf file, run
 `terraform apply`
 and the changes you made will be applied to AWS
+
+# Using k6
+
+For Windows, install k6 using Chocolatey
+
+Install chocolatey from https://chocolatey.org/
+
+Run `choco install k6`
+
+Then, `cd k6_tests`
+
+Then run any of the scripts using `k6 run script_name.js`
+
+# Using xk6, requires k6 to be installed.
+
+xk6 is used to visual the k6 metrics, install xk6 from Go
+
+Install go from https://go.dev/
+
+Run `go install go.k6.io/xk6/cmd/xk6@latest`
+
+If k6.exe does not exist in the folder with your tests, run `xk6 build --with github.com/grafana/xk6-dashboard@latest`
+
+Then run any of the tests scripts using `k6 run --out web-dashboard script_name.js`
+
+To view the dashboard with the graphs, visit `http://127.0.0.1:5665/` on any web browser.
